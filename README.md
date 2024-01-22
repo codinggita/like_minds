@@ -26,3 +26,6 @@ Project Name: LikeMinds
   - Search bar wherein we can search people.
   - A chat feature.
   - A section displaying events and opportunities coming up in the college.
+
+URL for published documentation on Postman:
+  https://documenter.getpostman.com/view/32344527/2s9YymFjMJ
