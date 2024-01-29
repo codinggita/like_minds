@@ -68,7 +68,7 @@ const students = {
 app.get("/students", (req, res) => {
     res.json(students.cse);
   });
-  app.get("/students/:CurrentYear", (req, res) => {
+  app.get("/studentpresent/:CurrentYear", (req, res) => {
     const y = students.cse.find((c) => c.year === req.params.CurrentYear);
     res.json(y);
   });
@@ -80,6 +80,17 @@ app.get("/students", (req, res) => {
     students.cse.splice(index, 1);
     res.send("Course deleted");
   });
+  // app.delete("/courses/:courseName", (req, res) => {
+  //   const index = courses.cse.findIndex(
+  //     (c) => c.course === req.params.courseName
+  //   );
+  //   if (index === -1) {
+  //     res.status(404).send("Course not found");
+  //   } else {
+  //     courses.cse.splice(index, 1);
+  //     res.send("Course deleted");
+  //   }
+  // });
   app.get("/students/:name", (req, res) => {
     const course = students[req.params.name];
     if (course) {
@@ -88,6 +99,56 @@ app.get("/students", (req, res) => {
       res.status(404).send("Course not found");
     }
   });
+
+  app.put("/students/:name", (req, res) => {
+    const index = students.cse.findIndex(
+      (c) => c.year === req.params.name
+    );
+    students.cse[index] = { ...students.cse[index], ...req.body };
+    res.send("Student's year updated");
+  });
+  // app.put("/courses/:courseName", (req, res) => {
+  //   const index = courses.cse.findIndex(
+  //     (c) => c.course === req.params.courseName
+  //   );
+  //   courses.cse[index] = { ...courses.cse[index], ...req.body };
+  //   res.send("Course updated");
+  // });
+  app.patch("/studentmodify/:studentname", (req, res) => {
+    const index = students.cse.findIndex(
+      (c) => c.name === req.params.studentname
+    );
+    // if (index === -1) {
+    //   res.status(404).send("student not found");
+    // }
+    //  else {
+      const student = students.cse[index];
+      // Update specific fields if they exist in the request body
+      if (req.body.year) student.year = req.body.year;
+      // if (req.body.college) courseToUpdate.college = req.body.college;
+      // if (req.body.semester) courseToUpdate.semester = req.body.semester;
+  
+      res.send("student detail updated");
+    // }
+  });
+  // app.patch("/courses/:courseName", (req, res) => {
+  //   const index = courses.cse.findIndex(
+  //     (c) => c.course === req.params.courseName
+  //   );
+  //   if (index === -1) {
+  //     res.status(404).send("Course not found");
+  //   } else {
+  //     const courseToUpdate = courses.cse[index];
+  //     // Update specific fields if they exist in the request body
+  //     if (req.body.cohort) courseToUpdate.cohort = req.body.cohort;
+  //     if (req.body.college) courseToUpdate.college = req.body.college;
+  //     if (req.body.semester) courseToUpdate.semester = req.body.semester;
+  
+  //     res.send("Course partially updated");
+  //   }
+  // });
+  
+
   app.get("/*", (req, res) => {
     res.send("You are on worng route. Here's the list of possible routes");
   });
