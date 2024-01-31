@@ -32,3 +32,6 @@ URL for published documentation on Postman:
 
 URL for frontend being deployed on netlify:
   https://like-minds.netlify.app/
+
+URL for figma design file:
+  https://www.figma.com/file/CB1Qiecm0BmmfV8oNw2Ij9/like_minds_blueprint?type=design&node-id=57%3A3&mode=design&t=yiYjV6zuKmua0W0M-1
