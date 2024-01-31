@@ -29,3 +29,6 @@ Project Name: LikeMinds
 
 URL for published documentation on Postman:
   https://documenter.getpostman.com/view/32344527/2s9YymFjMJ
+
+URL for frontend being deployed on netlify:
+  https://like-minds.netlify.app/
