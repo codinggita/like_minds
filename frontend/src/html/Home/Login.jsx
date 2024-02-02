@@ -1,7 +1,7 @@
 
 import React from 'react';
 import '../../../src/css/login.css';
-import loginimg from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/loginimage-1@2x.png'
+import loginimg from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/loginimage-1@2x.png'
 import rec from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/rectangle-9.svg'
 
 

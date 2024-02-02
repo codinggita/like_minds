@@ -1,8 +1,6 @@
 import React from 'react';
 import '../../../src/css/all.css'
 import bulb from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/bulb-1@2x.png'
-import rec3 from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/rectangle-3.svg'
-import comm1 from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/community-1.svg'
 import curious from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/curiosity-brainamico-1.svg'
 import down from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/download-1@2x.png'
 import event from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/events-1@2x.png'
