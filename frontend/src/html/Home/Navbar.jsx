@@ -57,6 +57,9 @@ function Navbar() {
                 <div className="login">Login</div>
               </button></Link>
             </div>
+            
+    
+            
             {/* <button className="frame-connect">
               <div className="frame-connect-child"></div>
               <div className="frame-curiosity-brainamico">
