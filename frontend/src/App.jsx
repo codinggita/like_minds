@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 // import Home from './components/Home';
 // import About from './components/About';
 // import Contact from './components/Contact';
-import Login from './html/Home/loginpage';
+
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
           
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <ul className="navbar-nav mr-auto">
-            <li><Link to={'/login'} className="nav-link">Login </Link></li>
+           
             {/* <li><Link to={'/contact'} className="nav-link">Contact</Link></li>
             <li><Link to={'/about'} className="nav-link">About</Link></li> */}
           </ul>

@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter,Routes, Route,Outlet,Link } from "react-router-dom";
+import { BrowserRouter,Routes, Route,Outlet } from "react-router-dom";
 import Navbar from './html/Home/Navbar';
-import Footer from './html/Home/Footer.jsx';
-import App from './App.jsx'
-import Login from './html/Home/loginpage';
+import Login from './html/Home/Login.jsx';
 import About from './html/Home/About.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
