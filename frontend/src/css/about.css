@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --font-inter: Inter;
+  
+    /* Colors */
+    --color-black: #000;
+  
+    /* Gaps */
+    --gap-52xl: 4.44rem;
+  
+    /* Border radiuses */
+    --br-xl: 20px;
+  }
+  .frame-child1 {
+    width: 61.25rem;
+    height: 42.38rem;
+    position: relative;
+    border-radius: var(--br-xl);
+    display: none;
+    max-width: 100%;
+  }
+  .about-us {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    line-height: 6.25rem;
+    font-weight: 400;
+    font-family: inherit;
+    z-index: 1;
+  }
+  .lorem-ipsum-dolor {
+    align-self: stretch;
+    height: 8.44rem;
+    position: relative;
+    line-height: 1.25rem;
+    display: inline-block;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .lorem-para {
+    width: 19.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2.5rem 0 0;
+    box-sizing: border-box;
+    min-width: 19.75rem;
+  }
+  .aboutus-1-icon {
+    width: 29.63rem;
+    position: relative;
+    max-height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+    z-index: 1;
+  }
+  .lorem-para-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-52xl);
+    max-width: 100%;
+    font-size: 1rem;
+  }
+  .desktop-3,
+  .vector-parent1 {
+    display: flex;
+    box-sizing: border-box;
+  }
+  .vector-parent1 {
+    width: 61.38rem;
+    border-radius: var(--br-xl);
+    background-color: #fff;
+    border: 1px solid var(--color-black);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4.56rem 1.81rem 10.63rem 6.56rem;
+    max-width: 100%;
+    text-align: left;
+    font-size: 3.13rem;
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+  .desktop-3 {
+    width: 100%;
+    position: relative;
+    background-color: #e0d4f8;
+    overflow: hidden;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10.56rem 1.5rem 11.06rem 1.25rem;
+    letter-spacing: normal;
+  }
+  @media screen and (max-width: 975px) {
+    .about-us {
+      font-size: 2.5rem;
+      line-height: 5rem;
+    }
+    .aboutus-1-icon,
+    .lorem-para {
+      flex: 1;
+    }
+    .lorem-para-parent {
+      flex-wrap: wrap;
+      gap: var(--gap-52xl);
+    }
+    .vector-parent1 {
+      padding-left: 3.25rem;
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .vector-parent {
+      padding-left: 1.63rem;
+      padding-top: 2.94rem;
+      padding-bottom: 6.88rem;
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .about-us {
+      font-size: 1.88rem;
+      line-height: 3.75rem;
+    }
+    .lorem-para-parent {
+      gap: var(--gap-52xl);
+    }
+  }
+  
