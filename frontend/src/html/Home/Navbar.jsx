@@ -7,13 +7,14 @@ import curious from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend
 import down from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/download-1@2x.png'
 import event from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/events-1@2x.png'
 import frame from '/Users/shrut/OneDrive/Desktop/LikeMinds/like_minds/frontend/src/public/frame-1.svg'
-
+import { Outlet,Link } from 'react-router-dom'
 function Navbar() {
   return (
     <div className='maindiv'>
     <div className="desktop-1">
       <section className="frame-root">
-        <header className="frame-home-communities-resourc">
+        <nav className="frame-home-communities-resourc">
+    
           <div className="frame-home-community-resources">
             <img
               className="bulb-1-icon"
@@ -25,36 +26,53 @@ function Navbar() {
             <b className="likeminds">LikeMinds</b>
           </div>
           <div className="frame-home">
-            <img
+            {/* <img
               className="frame-home-child"
               alt=""
               src={rec3}
-            />
+            /> */}
 
             <div className="frame-communities">
-              <div className="home">Home</div>
+              <div className="home"><Link to = "/">Home</Link></div>
             </div>
-            <div className="events">Events</div>
+            {/* <div className="frame-communities">
+              <div className="events"><Link to = "/events">Events</Link></div>
+            </div> */}
+            <div className="frame-communities">
+              <div className="home"><Link to = "/about">About</Link></div>
+            </div>
+            <div className="frame-communities">
+              <div className="home"><Link to = "/contact">Contact</Link></div>
+            </div>
+            {/* <div className="frame-communities1">
+              <div className="communities"><Link to="/communities">Communities</Link></div>
+            </div>
             <div className="frame-communities1">
-              <div className="communities">Communities</div>
-            </div>
-            <div className="frame-communities2">
-              <div className="resources">Resources</div>
-            </div>
+              <div className="resources"><Link to="/resources">Resources</Link></div>
+            </div> */}
             <div className="frame-login">
+            <Link to="/login">
               <button className="frame-sign-up">
                 <div className="frame-sign-up-child"></div>
                 <div className="login">Login</div>
-              </button>
+              </button></Link>
             </div>
-            <button className="frame-connect">
+            {/* <button className="frame-connect">
               <div className="frame-connect-child"></div>
               <div className="frame-curiosity-brainamico">
                 <div className="sign-up">Sign Up</div>
               </div>
-            </button>
+            </button> */}
+            <div className="frame-login">
+            <Link to="/sign-up">
+              <button className="frame-sign-up">
+                <div className="frame-sign-up-child"></div>
+                <div className="login">Sign Up</div>
+              </button></Link>
+            </div>
           </div>
-        </header>
+        </nav>
+        <Outlet/>
         <div className="text-question">
           <i className="are-you-in-container">
             <p className="are-you-in">Are you in search of some like</p>
@@ -191,7 +209,7 @@ function Navbar() {
         <div className="events-text">
           <textarea className="rectangle-frame1" rows={5} cols={13}></textarea>
         </div>
-        <img className="community-1-icon" alt="" src={comm1} />
+        {/* <img className="community-1-icon" alt="" src={comm1} /> */}
       </section>
     </div>
     </div>
