@@ -5,6 +5,8 @@ Reg. No.: 12112319
 
 Project Name: LikeMinds
 
+Website Link: https://like-minds.netlify.app/
+
 - Which problem Project is Solving?
 
   After having completed 2 years of offline college I have realised the importance of having the right people around you.
