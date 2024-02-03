@@ -4,6 +4,7 @@ Name: Shruti Bansal Gupta
 Reg. No.: 12112319
 
 Project Name: LikeMinds
+Website Link: https://like-minds.netlify.app/
 
 - Which problem Project is Solving?
 
