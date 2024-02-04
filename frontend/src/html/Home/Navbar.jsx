@@ -150,7 +150,9 @@ function Navbar() {
                   </p>
                 </div>
                 <div className="frame-frame">
-                  <textarea className="like-minds-text" rows={5} cols={13}></textarea>
+                  {/* <button className="like-minds-text" rows={5} cols={13}>Ask</button> */}
+                  <Link to="/queries">
+                  <button className="query" rows={5} cols={13}>Ask</button></Link>
                 </div>
               </div>
             </div>
@@ -172,9 +174,13 @@ function Navbar() {
                   </span>
                 </p>
               </div>
+              {/* <div className="events-frame">
+              <button className="community-frame" rows={5} cols={13}>JOIN</button>
+              </div> */}
               <div className="events-frame">
-                <textarea className="community-frame" rows={5} cols={13}></textarea>
-              </div>
+        <Link to="/communities">
+          <button className="join" rows={5} cols={13}>JOIN</button> </Link>
+        </div>
             </div>
             <img
               className="download-1-icon"
@@ -207,9 +213,16 @@ function Navbar() {
           </p>
           <p className="events1">Events</p>
         </div>
+        {/* <button className='rectangle-frame1' rows={5} cols={13}></button> */}
         <div className="events-text">
-          <textarea className="rectangle-frame1" rows={5} cols={13}></textarea>
+        <Link to="/events">
+          <button className="rectangle-frame1" rows={5} cols={13}>Participate</button> </Link>
         </div>
+        {/* <Link to="/login">
+              <button className="frame-sign-up">
+                <div className="frame-sign-up-child"></div>
+                <div className="login">Login</div>
+              </button></Link> */}
         {/* <img className="community-1-icon" alt="" src={comm1} /> */}
       </section>
     </div>

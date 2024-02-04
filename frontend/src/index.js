@@ -5,6 +5,9 @@ import { BrowserRouter,Routes, Route,Outlet } from "react-router-dom";
 import Navbar from './html/Home/Navbar';
 import Login from './html/Home/Login.jsx';
 import About from './html/Home/About.jsx';
+import Event from './html/Home/Events.jsx';
+import Community from './html/Home/Community.jsx';
+import Queries from './html/Home/Queries.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +16,9 @@ root.render(
     <Route path='/' element={<><Navbar/></>}/>
      <Route path ="/login" element={<Login/>}></Route> 
      <Route path='/about' element={<About/>}></Route>
+     <Route path='/events' element={<Event/>}></Route>
+     <Route path='/communities' element={<Community/>}></Route>
+     <Route path='/queries' element={<Queries/>}></Route>
      <Route path='/*' element={<p>No route is available</p>}/>
     </Routes>
     <Outlet/>
