@@ -36,3 +36,38 @@ function About() {
 }
 
 export default About;
+// @media screen and (max-width: 975px) {
+//   .about-us {
+//     font-size: 2.5rem;
+//     line-height: 5rem;
+//   }
+//   .aboutus-1-icon,
+//   .lorem-para {
+//     flex: 1;
+//   }
+//   .lorem-para-parent {
+//     flex-wrap: wrap;
+//     gap: var(--gap-52xl);
+//   }
+//   .vector-parent {
+//     padding-left: 3.25rem;
+//     box-sizing: border-box;
+//   }
+// }
+// @media screen and (max-width: 700px) {
+//   .vector-parent {
+//     padding-left: 1.63rem;
+//     padding-top: 2.94rem;
+//     padding-bottom: 6.88rem;
+//     box-sizing: border-box;
+//   }
+// }
+// @media screen and (max-width: 450px) {
+//   .about-us {
+//     font-size: 1.88rem;
+//     line-height: 3.75rem;
+//   }
+//   .lorem-para-parent {
+//     gap: var(--gap-52xl);
+//   }
+// }
