@@ -1,0 +1,83 @@
+[
+    {
+      "name": "Tech Conference 2024",
+      "date": "2024-05-20T10:00:00.000Z",
+      "location": "Convention Center, San Francisco",
+      "description": "A conference showcasing the latest trends and innovations in technology.",
+      "organizer": "613f10356c16b3e9771e8774",
+      "attendees": ["613f10356c16b3e9771e8775", "613f10356c16b3e9771e8776", "613f10356c16b3e9771e8777"]
+    },
+    {
+      "name": "Fitness Bootcamp",
+      "date": "2024-06-15T08:00:00.000Z",
+      "location": "Central Park, New York",
+      "description": "A fitness bootcamp featuring high-intensity workouts and wellness seminars.",
+      "organizer": "613f10356c16b3e9771e8778",
+      "attendees": ["613f10356c16b3e9771e8779", "613f10356c16b3e9771e8780"]
+    },
+    {
+      "name": "Art Exhibition Opening",
+      "date": "2024-07-10T18:00:00.000Z",
+      "location": "Metropolitan Museum of Art, New York",
+      "description": "The grand opening of a new art exhibition featuring contemporary artists.",
+      "organizer": "613f10356c16b3e9771e8774",
+      "attendees": ["613f10356c16b3e9771e8775", "613f10356c16b3e9771e8776", "613f10356c16b3e9771e8777", "613f10356c16b3e9771e8778"]
+    },
+    {
+      "name": "Food Festival",
+      "date": "2024-08-25T12:00:00.000Z",
+      "location": "Downtown, Los Angeles",
+      "description": "A festival celebrating diverse cuisines with food stalls, cooking demos, and live music.",
+      "organizer": "613f10356c16b3e9771e8779",
+      "attendees": ["613f10356c16b3e9771e8774", "613f10356c16b3e9771e8775", "613f10356c16b3e9771e8776"]
+    },
+    {
+      "name": "Photography Workshop",
+      "date": "2024-09-30T14:00:00.000Z",
+      "location": "Studio 54, Chicago",
+      "description": "A workshop for amateur and professional photographers to learn new techniques and share experiences.",
+      "organizer": "613f10356c16b3e9771e8778",
+      "attendees": ["613f10356c16b3e9771e8779", "613f10356c16b3e9771e8780", "613f10356c16b3e9771e8781"]
+    },
+    {
+      "name": "Startup Pitch Night",
+      "date": "2024-10-15T19:00:00.000Z",
+      "location": "Tech Hub, San Francisco",
+      "description": "An event where startups pitch their ideas to investors and network with industry professionals.",
+      "organizer": "613f10356c16b3e9771e8774",
+      "attendees": ["613f10356c16b3e9771e8775", "613f10356c16b3e9771e8776"]
+    },
+    {
+      "name": "Music Concert",
+      "date": "2024-11-20T20:00:00.000Z",
+      "location": "Staples Center, Los Angeles",
+      "description": "A live concert featuring popular bands and solo artists performing various genres of music.",
+      "organizer": "613f10356c16b3e9771e8778",
+      "attendees": ["613f10356c16b3e9771e8779", "613f10356c16b3e9771e8780", "613f10356c16b3e9771e8781", "613f10356c16b3e9771e8782"]
+    },
+    {
+      "name": "Charity Gala Dinner",
+      "date": "2024-12-05T18:30:00.000Z",
+      "location": "Grand Ballroom, New York",
+      "description": "A fundraising gala dinner to support various charitable causes and initiatives.",
+      "organizer": "613f10356c16b3e9771e8774",
+      "attendees": ["613f10356c16b3e9771e8775", "613f10356c16b3e9771e8776", "613f10356c16b3e9771e8777", "613f10356c16b3e9771e8778"]
+    },
+    {
+      "name": "Fashion Show",
+      "date": "2025-01-10T17:00:00.000Z",
+      "location": "Fashion District, Paris",
+      "description": "An extravagant fashion show featuring renowned designers and models showcasing the latest collections.",
+      "organizer": "613f10356c16b3e9771e8779",
+      "attendees": ["613f10356c16b3e9771e8774", "613f10356c16b3e9771e8775", "613f10356c16b3e9771e8776", "613f10356c16b3e9771e8777", "613f10356c16b3e9771e8778"]
+    },
+    {
+      "name": "Film Premiere",
+      "date": "2025-02-20T19:30:00.000Z",
+      "location": "TCL Chinese Theatre, Los Angeles",
+      "description": "The premiere of a highly anticipated film with red carpet arrivals and celebrity guests.",
+      "organizer": "613f10356c16b3e9771e8778",
+      "attendees": ["613f10356c16b3e9771e8779", "613f10356c16b3e9771e8780", "613f10356c16b3e9771e8781", "613f10356c16b3e9771e8782", "613f10356c16b3e9771e8783"]
+    }
+  ]
+  
