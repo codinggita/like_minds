@@ -1,0 +1,93 @@
+[
+    {
+      "name": "Artists Hub",
+      "description": "A community for artists to share their work and collaborate with others.",
+      "members": 700,
+      "createdAt": "2022-09-15T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8774",
+      "moderators": ["613f10356c16b3e9771e8775", "613f10356c16b3e9771e8776"],
+      "posts": ["613f10356c16b3e9771e8777", "613f10356c16b3e9771e8778"]
+    },
+    {
+      "name": "Book Lovers Club",
+      "description": "A community for book enthusiasts to discuss literature and recommend books.",
+      "members": 400,
+      "createdAt": "2023-05-20T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8779",
+      "moderators": ["613f10356c16b3e9771e8780", "613f10356c16b3e9771e8781"],
+      "posts": ["613f10356c16b3e9771e8782", "613f10356c16b3e9771e8783"]
+    },
+    {
+      "name": "Travel Enthusiasts",
+      "description": "A community for travel enthusiasts to share their experiences and travel tips.",
+      "members": 600,
+      "createdAt": "2023-03-10T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8774",
+      "moderators": ["613f10356c16b3e9771e8775"],
+      "posts": ["613f10356c16b3e9771e8777"]
+    },
+    {
+      "name": "Foodies Corner",
+      "description": "A community for food lovers to discuss recipes, restaurants, and culinary experiences.",
+      "members": 900,
+      "createdAt": "2022-11-05T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8779",
+      "moderators": ["613f10356c16b3e9771e8780", "613f10356c16b3e9771e8781"],
+      "posts": ["613f10356c16b3e9771e8782", "613f10356c16b3e9771e8783"]
+    },
+    {
+      "name": "Photography Society",
+      "description": "A community for photography enthusiasts to share their work and techniques.",
+      "members": 550,
+      "createdAt": "2022-10-20T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8774",
+      "moderators": ["613f10356c16b3e9771e8775"],
+      "posts": ["613f10356c16b3e9771e8778"]
+    },
+    {
+      "name": "Entrepreneurs Network",
+      "description": "A community for entrepreneurs to network, share ideas, and support each other.",
+      "members": 800,
+      "createdAt": "2022-08-15T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8779",
+      "moderators": ["613f10356c16b3e9771e8780"],
+      "posts": ["613f10356c16b3e9771e8782"]
+    },
+    {
+      "name": "Gaming Community",
+      "description": "A community for gamers to discuss gaming news, strategies, and multiplayer sessions.",
+      "members": 1200,
+      "createdAt": "2022-07-10T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8774",
+      "moderators": ["613f10356c16b3e9771e8775", "613f10356c16b3e9771e8776"],
+      "posts": ["613f10356c16b3e9771e8777", "613f10356c16b3e9771e8778"]
+    },
+    {
+      "name": "Music Lovers Society",
+      "description": "A community for music enthusiasts to share their favorite songs, artists, and concerts.",
+      "members": 650,
+      "createdAt": "2022-06-05T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8779",
+      "moderators": ["613f10356c16b3e9771e8780"],
+      "posts": ["613f10356c16b3e9771e8783"]
+    },
+    {
+      "name": "Environmental Activists",
+      "description": "A community dedicated to environmental conservation and activism.",
+      "members": 350,
+      "createdAt": "2022-04-20T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8774",
+      "moderators": ["613f10356c16b3e9771e8775", "613f10356c16b3e9771e8776"],
+      "posts": ["613f10356c16b3e9771e8777"]
+    },
+    {
+      "name": "Film Buffs Club",
+      "description": "A community for movie enthusiasts to discuss films, directors, and cinematography.",
+      "members": 480,
+      "createdAt": "2022-03-15T08:00:00.000Z",
+      "createdBy": "613f10356c16b3e9771e8779",
+      "moderators": ["613f10356c16b3e9771e8780", "613f10356c16b3e9771e8781"],
+      "posts": ["613f10356c16b3e9771e8782", "613f10356c16b3e9771e8783"]
+    }
+  ]
+  

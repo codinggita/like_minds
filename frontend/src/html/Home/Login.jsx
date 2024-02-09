@@ -23,16 +23,16 @@ function Login() {
             <div className="welcome-back-parent">
               <div className="welcome-back">Welcome Back!</div>
               <div className="frame-container">
-                <button className="rectangle-group">
+                <div className="rectangle-group">
                   <div className="frame-item"></div>
-                  <div className="email">Email</div>
-                </button>
+                  <div className="email"><input type="textbox" placeholder='Email' /></div>
+                </div>
               </div>
             </div>
             <div className="frame-div">
               <button className="rectangle-container">
                 <div className="frame-inner"></div>
-                <div className="password">Password</div>
+                <div className="password"><input type="password" placeholder='password' /></div>
               </button>
             </div>
             <div className="frame-wrapper1">

@@ -11,69 +11,7 @@ function Navbar() {
     <div className='maindiv'>
     <div className="desktop-1">
       <section className="frame-root">
-        <nav className="frame-home-communities-resourc">
-    
-          <div className="frame-home-community-resources">
-            <img
-              className="bulb-1-icon"
-              loading="eager"
-              alt=""
-              src={bulb}
-            />
-
-            <b className="likeminds">LikeMinds</b>
-          </div>
-          <div className="frame-home">
-            {/* <img
-              className="frame-home-child"
-              alt=""
-              src={rec3}
-            /> */}
-
-            <div className="frame-communities">
-              <div className="home"><Link to = "/">Home</Link></div>
-            </div>
-            {/* <div className="frame-communities">
-              <div className="events"><Link to = "/events">Events</Link></div>
-            </div> */}
-            <div className="frame-communities">
-              <div className="home"><Link to = "/about">About</Link></div>
-            </div>
-            <div className="frame-communities">
-              <div className="home"><Link to = "/contact">Contact</Link></div>
-            </div>
-            {/* <div className="frame-communities1">
-              <div className="communities"><Link to="/communities">Communities</Link></div>
-            </div>
-            <div className="frame-communities1">
-              <div className="resources"><Link to="/resources">Resources</Link></div>
-            </div> */}
-            <div className="frame-login">
-            <Link to="/login">
-              <button className="frame-sign-up">
-                <div className="frame-sign-up-child"></div>
-                <div className="login">Login</div>
-              </button></Link>
-            </div>
-            
-    
-            
-            {/* <button className="frame-connect">
-              <div className="frame-connect-child"></div>
-              <div className="frame-curiosity-brainamico">
-                <div className="sign-up">Sign Up</div>
-              </div>
-            </button> */}
-            <div className="frame-login">
-            <Link to="/sign-up">
-              <button className="frame-sign-up">
-                <div className="frame-sign-up-child"></div>
-                <div className="login">Sign Up</div>
-              </button></Link>
-            </div>
-          </div>
-        </nav>
-        <Outlet/>
+       
         <div className="text-question">
           <i className="are-you-in-container">
             <p className="are-you-in">Are you in search of some like</p>
@@ -150,7 +88,9 @@ function Navbar() {
                   </p>
                 </div>
                 <div className="frame-frame">
-                  <textarea className="like-minds-text" rows={5} cols={13}></textarea>
+                  {/* <button className="like-minds-text" rows={5} cols={13}>Ask</button> */}
+                  <Link to="/queries">
+                  <button className="query" rows={5} cols={13}>Ask</button></Link>
                 </div>
               </div>
             </div>
@@ -172,9 +112,13 @@ function Navbar() {
                   </span>
                 </p>
               </div>
+              {/* <div className="events-frame">
+              <button className="community-frame" rows={5} cols={13}>JOIN</button>
+              </div> */}
               <div className="events-frame">
-                <textarea className="community-frame" rows={5} cols={13}></textarea>
-              </div>
+        <Link to="/communities">
+          <button className="join" rows={5} cols={13}>JOIN</button> </Link>
+        </div>
             </div>
             <img
               className="download-1-icon"
@@ -207,9 +151,16 @@ function Navbar() {
           </p>
           <p className="events1">Events</p>
         </div>
+        {/* <button className='rectangle-frame1' rows={5} cols={13}></button> */}
         <div className="events-text">
-          <textarea className="rectangle-frame1" rows={5} cols={13}></textarea>
+        <Link to="/events">
+          <button className="rectangle-frame1" rows={5} cols={13}>Participate</button> </Link>
         </div>
+        {/* <Link to="/login">
+              <button className="frame-sign-up">
+                <div className="frame-sign-up-child"></div>
+                <div className="login">Login</div>
+              </button></Link> */}
         {/* <img className="community-1-icon" alt="" src={comm1} /> */}
       </section>
     </div>
