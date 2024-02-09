@@ -78,6 +78,14 @@
       "description": "The premiere of a highly anticipated film with red carpet arrivals and celebrity guests.",
       "organizer": "613f10356c16b3e9771e8778",
       "attendees": ["613f10356c16b3e9771e8779", "613f10356c16b3e9771e8780", "613f10356c16b3e9771e8781", "613f10356c16b3e9771e8782", "613f10356c16b3e9771e8783"]
+    },
+    {
+      "name": "Coding club",
+      "date": "2025-02-20T19:30:00.000Z",
+      "location": "TCL Chinese Theatre, Los Angeles",
+      "description": "The premiere of a highly anticipated film with red carpet arrivals and celebrity guests.",
+      "organizer": "613f10356c16b3e9771e8778",
+      "attendees": ["613f10356c16b3e9771e8779", "613f10356c16b3e9771e8780", "613f10356c16b3e9771e8781", "613f10356c16b3e9771e8782", "613f10356c16b3e9771e8783"]
     }
   ]
   

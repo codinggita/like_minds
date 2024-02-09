@@ -1,11 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 8000;
+const cors = require('cors');
+require("dotenv").config();
+const port = process.env.PORT;
+
+
+
+app.use(cors());
 
 app.use(express.json());
-app.listen(PORT,()=>{
-  console.log(`Server listening at http://localhost:${PORT}`);
+app.listen(port,()=>{
+  console.log(`Server listening at http://localhost:${port}`);
 })
 
 // Middleware to parse JSON bodies
@@ -38,7 +44,6 @@ const communitySchema = new mongoose.Schema({
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true
   },
   moderators: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -127,6 +132,20 @@ app.delete('/communities/:id', getCommunity, async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+app.delete('/communities/:name', getCommunity,async (req, res) => {
+  const communityName = req.params.name;
+  try {
+    const deletedCommunity = await Community.deleteOne({ name: res.community.name });
+    if (deletedCommunity.deletedCount === 0) {
+      return res.status(404).json({ message: 'Community not found' });
+    }
+    res.json({ message: 'Community deleted' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+
 
 async function getCommunity(req, res, next) {
   let community;
@@ -144,6 +163,249 @@ async function getCommunity(req, res, next) {
 
 
 module.exports = app;
+
+
+// MongoDB schema for a event
+// Define schema for Event
+const eventSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    required: true
+  },
+  location: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  organizer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  attendees: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }]
+});
+
+// Create model for Event
+const Event = mongoose.model('Event', eventSchema);
+module.exports = Event;
+
+
+
+//Api requests for events*****************************************
+
+app.get('/events', async (req, res) => {
+  try {
+    const events = await Event.find();
+    res.json(events);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// GET one event
+app.get('/events/:id', getEvent, (req, res) => {
+  res.json(res.event);
+});
+
+// POST create a new event
+app.post('/events/createevent', async (req, res) => {
+  const event = new Event({
+    name: req.body.name,
+    date: req.body.date,
+    location: req.body.location,
+    description: req.body.description,
+    organizer: req.body.organizer,
+    attendees: req.body.attendees
+  });
+
+  try {
+    const newEvent = await event.save();
+    res.status(201).json("event added");
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+// PUT update an event
+app.put('/events/:id', getEvent, async (req, res) => {
+  try {
+    await res.event.updateOne(req.body);
+    res.json({ message: 'Event updated' });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+// PATCH update an event
+app.patch('/events/:id', getEvent, async (req, res) => {
+  try {
+    const updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json(updatedEvent);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+app.patch('/events/:id', getEvent, async (req, res) => {
+  if (req.body.name != null) {
+    res.event.name = req.body.name;
+  }
+  if (req.body.description != null) {
+    res.event.description = req.body.description;
+  }
+  if (req.body.date != null) {
+    res.event.date = req.body.date;
+  }
+  try {
+    const updatedevent = await res.community.save();
+    res.json("updated Event");
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+// PATCH update a community
+// app.patch('/communities/:id', getCommunity, async (req, res) => {
+//   if (req.body.name != null) {
+//     res.community.name = req.body.name;
+//   }
+//   if (req.body.description != null) {
+//     res.community.description = req.body.description;
+//   }
+//   if (req.body.members != null) {
+//     res.community.members = req.body.members;
+//   }
+//   try {
+//     const updatedCommunity = await res.community.save();
+//     res.json("updated Community");
+//   } catch (err) {
+//     res.status(400).json({ message: err.message });
+//   }
+// });
+// DELETE an event
+app.delete('/events/:id', getEvent, async (req, res) => {
+  try {
+    await res.event.remove();
+    res.json({ message: 'Event deleted' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+app.delete('/events/:name', async (req, res) => {
+  const eventName = req.params.name;
+  try {
+    const deletedEvent = await Event.deleteOne({ name: eventName });
+    if (deletedEvent.deletedCount === 0) {
+      return res.status(404).json({ message: 'Event not found' });
+    }
+    res.json({ message: 'Event deleted' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+app.delete("/events/:eventName", async (req, res) => {
+  const eventName = req.params.eventName;
+  try {
+    const deletedEvent = await Event.findOneAndDelete({ name: eventName });
+    if (!deletedEvent) {
+      res.status(404).send("Event not found");
+    } else {
+      res.send("Event deleted");
+    }
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+
+
+async function getEvent(req, res, next) {
+  try {
+    const event = await Event.findById(req.params.id);
+    if (event == null) {
+      return res.status(404).json({ message: 'Event not found' });
+    }
+    res.event = event;
+    next();
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+}
+
+module.exports = app;
+
+// GET request to retrieve all events
+// app.get('/events', (req, res) => {
+//   res.json(events);
+// });
+
+// // GET request to retrieve a specific event by ID
+// app.get('/events/:id', (req, res) => {
+//   const eventId = parseInt(req.params.id);
+//   const event = events.find(event => event.id === eventId);
+//   if (event) {
+//     res.json(event);
+//   } else {
+//     res.status(404).send('Event not found');
+//   }
+// });
+
+// // POST request to create a new event
+// app.post('/events', (req, res) => {
+//   const newEvent = req.body;
+//   events.push(newEvent);
+//   res.status(201).send('Event created successfully');
+// });
+
+// // PUT request to update a specific event by ID
+// app.put('/events/:id', (req, res) => {
+//   const eventId = parseInt(req.params.id);
+//   const updatedEvent = req.body;
+//   const index = events.findIndex(event => event.id === eventId);
+//   if (index !== -1) {
+//     events[index] = { ...events[index], ...updatedEvent };
+//     res.send('Event updated successfully');
+//   } else {
+//     res.status(404).send('Event not found');
+//   }
+// });
+
+// // PATCH request to partially update a specific event by ID
+// app.patch('/events/:id', (req, res) => {
+//   const eventId = parseInt(req.params.id);
+//   const partialEvent = req.body;
+//   const index = events.findIndex(event => event.id === eventId);
+//   if (index !== -1) {
+//     events[index] = { ...events[index], ...partialEvent };
+//     res.send('Event partially updated successfully');
+//   } else {
+//     res.status(404).send('Event not found');
+//   }
+// });
+
+// // DELETE request to delete a specific event by ID
+// app.delete('/events/:id', (req, res) => {
+//   const eventId = parseInt(req.params.id);
+//   const index = events.findIndex(event => event.id === eventId);
+//   if (index !== -1) {
+//     events.splice(index, 1);
+//     res.send('Event deleted successfully');
+//   } else {
+//     res.status(404).send('Event not found');
+//   }
+// });
+
+// // Start the server
+// // app.listen(PORT, () => {
+// //   console.log(`Server is running on http://localhost:${PORT}`);
+// // });
 
 //api requests for communities
 // GET request to retrieve all communities
@@ -291,188 +553,6 @@ module.exports = app;
 //   { id: 2, name: 'Music Festival', date: '2022-09-25', location: 'New York' },
 //   { id: 3, name: 'Art Exhibition', date: '2022-11-05', location: 'Los Angeles' }
 // ];
-
-// MongoDB schema for a event
-// Define schema for Event
-const eventSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  date: {
-    type: Date,
-    required: true
-  },
-  location: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  organizer: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  },
-  attendees: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  }]
-});
-
-// Create model for Event
-const Event = mongoose.model('Event', eventSchema);
-module.exports = Event;
-
-
-
-//Api requests for events*****************************************
-
-app.get('/events', async (req, res) => {
-  try {
-    const events = await Event.find();
-    res.json(events);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-// GET one event
-app.get('/events/:id', getEvent, (req, res) => {
-  res.json(res.event);
-});
-
-// POST create a new event
-app.post('/events', async (req, res) => {
-  const event = new Event({
-    name: req.body.name,
-    date: req.body.date,
-    location: req.body.location,
-    description: req.body.description,
-    organizer: req.body.organizer,
-    attendees: req.body.attendees
-  });
-
-  try {
-    const newEvent = await event.save();
-    res.status(201).json(newEvent);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
-// PUT update an event
-app.put('/events/:id', getEvent, async (req, res) => {
-  try {
-    await res.event.updateOne(req.body);
-    res.json({ message: 'Event updated' });
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
-// PATCH update an event
-app.patch('/events/:id', getEvent, async (req, res) => {
-  try {
-    const updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.json(updatedEvent);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
-// DELETE an event
-app.delete('/events/:id', getEvent, async (req, res) => {
-  try {
-    await res.event.remove();
-    res.json({ message: 'Event deleted' });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
-async function getEvent(req, res, next) {
-  try {
-    const event = await Event.findById(req.params.id);
-    if (event == null) {
-      return res.status(404).json({ message: 'Event not found' });
-    }
-    res.event = event;
-    next();
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-}
-
-module.exports = app;
-
-// GET request to retrieve all events
-// app.get('/events', (req, res) => {
-//   res.json(events);
-// });
-
-// // GET request to retrieve a specific event by ID
-// app.get('/events/:id', (req, res) => {
-//   const eventId = parseInt(req.params.id);
-//   const event = events.find(event => event.id === eventId);
-//   if (event) {
-//     res.json(event);
-//   } else {
-//     res.status(404).send('Event not found');
-//   }
-// });
-
-// // POST request to create a new event
-// app.post('/events', (req, res) => {
-//   const newEvent = req.body;
-//   events.push(newEvent);
-//   res.status(201).send('Event created successfully');
-// });
-
-// // PUT request to update a specific event by ID
-// app.put('/events/:id', (req, res) => {
-//   const eventId = parseInt(req.params.id);
-//   const updatedEvent = req.body;
-//   const index = events.findIndex(event => event.id === eventId);
-//   if (index !== -1) {
-//     events[index] = { ...events[index], ...updatedEvent };
-//     res.send('Event updated successfully');
-//   } else {
-//     res.status(404).send('Event not found');
-//   }
-// });
-
-// // PATCH request to partially update a specific event by ID
-// app.patch('/events/:id', (req, res) => {
-//   const eventId = parseInt(req.params.id);
-//   const partialEvent = req.body;
-//   const index = events.findIndex(event => event.id === eventId);
-//   if (index !== -1) {
-//     events[index] = { ...events[index], ...partialEvent };
-//     res.send('Event partially updated successfully');
-//   } else {
-//     res.status(404).send('Event not found');
-//   }
-// });
-
-// // DELETE request to delete a specific event by ID
-// app.delete('/events/:id', (req, res) => {
-//   const eventId = parseInt(req.params.id);
-//   const index = events.findIndex(event => event.id === eventId);
-//   if (index !== -1) {
-//     events.splice(index, 1);
-//     res.send('Event deleted successfully');
-//   } else {
-//     res.status(404).send('Event not found');
-//   }
-// });
-
-// // Start the server
-// // app.listen(PORT, () => {
-// //   console.log(`Server is running on http://localhost:${PORT}`);
-// // });
 
 
 
