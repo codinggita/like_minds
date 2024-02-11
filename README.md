@@ -30,7 +30,7 @@ Website Link: https://like-minds.netlify.app/
   - A section displaying events and opportunities coming up in the college.
 
 URL for published documentation on Postman:
-  https://documenter.getpostman.com/view/32344527/2s9YymFjMJ
+  [https://documenter.getpostman.com/view/32344527/2s9YymFjMJ](https://documenter.getpostman.com/view/32344527/2sA2r3YkDT)
 
 URL for frontend being deployed on netlify:
   https://like-minds.netlify.app/
