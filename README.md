@@ -7,8 +7,6 @@ Project Name: LikeMinds
 
 Website Link: https://like-minds.netlify.app/
 
-Video Link: https://1drv.ms/v/s!AgqksGt771VSh54joBLg1k_LgqgpYw
-
 - Which problem Project is Solving?
 
   After having completed 2 years of offline college I have realised the importance of having the right people around you.
